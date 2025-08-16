@@ -1,0 +1,174 @@
+---
+import { getFeaturedVehicles, formatPrice, formatMileage } from '@/data/vehicles.js';
+import VehicleCard from '@/components/vehicle/VehicleCard.astro';
+
+const featuredVehicles = getFeaturedVehicles();
+---
+
+<section class="py-16 lg:py-24 bg-black-brand relative overflow-hidden">
+  <!-- Background Elements -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-32 h-32 bg-yellow-ego rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-48 h-48 bg-yellow-ego rounded-full blur-3xl"></div>
+  </div>
+  
+  <div class="container-custom relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <div class="inline-flex items-center space-x-2 bg-yellow-ego/10 text-yellow-ego px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+        </svg>
+        <span>Vehículos Destacados</span>
+      </div>
+      
+      <h2 class="text-3xl lg:text-5xl font-bold mb-6">
+        Descubre nuestra selección <span class="text-gradient">premium</span> de vehículos certificados
+      </h2>
+      
+      <p class="text-lg lg:text-xl text-text-secondary max-w-3xl mx-auto">
+        con garantía extendida y financiamiento disponible
+      </p>
+    </div>
+    
+    <!-- Featured Vehicles Grid - FIXED -->
+    <div class="vehicles-grid mb-16">
+      {featuredVehicles.map((vehicle, index) => (
+        <div class="vehicle-item animate-on-scroll" style={`animation-delay: ${index * 0.2}s`}>
+          <VehicleCard vehicle={vehicle} />
+        </div>
+      ))}
+    </div>
+    
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-12 animate-on-scroll">
+      <div class="text-center p-6 bg-surface-dark rounded-xl border border-border-gray">
+        <div class="w-12 h-12 bg-yellow-ego/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-yellow-ego" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-yellow-ego mb-2">100%</div>
+        <div class="text-sm text-text-secondary">Certificados</div>
+      </div>
+      
+      <div class="text-center p-6 bg-surface-dark rounded-xl border border-border-gray">
+        <div class="w-12 h-12 bg-yellow-ego/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-yellow-ego" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-yellow-ego mb-2">0%</div>
+        <div class="text-sm text-text-secondary">Financiamiento</div>
+      </div>
+      
+      <div class="text-center p-6 bg-surface-dark rounded-xl border border-border-gray">
+        <div class="w-12 h-12 bg-yellow-ego/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-yellow-ego" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-yellow-ego mb-2">3</div>
+        <div class="text-sm text-text-secondary">Años Garantía</div>
+      </div>
+      
+      <div class="text-center p-6 bg-surface-dark rounded-xl border border-border-gray">
+        <div class="w-12 h-12 bg-yellow-ego/10 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6 text-yellow-ego" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-yellow-ego mb-2">24h</div>
+        <div class="text-sm text-text-secondary">Aprobación</div>
+      </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="text-center animate-on-scroll">
+      <a 
+        href="/catalogo" 
+        class="btn-primary text-lg px-8 py-4 inline-flex items-center group"
+      >
+        <span>Ver Catálogo Completo</span>
+        <svg class="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      
+      <p class="text-sm text-text-secondary mt-4">
+        Más de <span class="text-yellow-ego font-semibold">50 vehículos</span> disponibles en nuestro showroom
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* FIXED: Grid responsivo para vehículos */
+  .vehicles-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  
+  /* Tablet */
+  @media (min-width: 768px) {
+    .vehicles-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .vehicles-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2.5rem;
+    }
+  }
+  
+  /* Asegurar que cada item no se deforme */
+  .vehicle-item {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vehicle-item :global(.card-vehicle) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .vehicle-item :global(.card-vehicle > div:last-child) {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  /* Animation states */
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-on-scroll.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 640px) {
+    .vehicles-grid {
+      gap: 1.5rem;
+      padding: 0 0.5rem;
+    }
+    
+    .vehicle-item {
+      min-height: 550px;
+    }
+  }
+</style>

@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variables CSS personalizadas */
+:root {
+  /* Colores E-Go Cars */
+  --color-black-brand: #0D0E12;
+  --color-surface-dark: #11151A;
+  --color-border: #1F2937;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #E5E7EB;
+  --color-yellow-ego: #FFD20A;
+  --color-yellow-hover: #FFC107;
+  --color-yellow-focus: #E0A800;
+  --color-yellow-soft: #FFF4BF;
+  
+  /* Espaciado */
+  --container-padding: 1rem;
+  --section-padding: 4rem 0;
+  --border-radius: 0.75rem;
+  --border-radius-lg: 1rem;
+  --border-radius-xl: 1.5rem;
+  
+  /* Sombras */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --shadow-yellow: 0 0 20px rgba(255, 210, 10, 0.3);
+  
+  /* Transiciones */
+  --transition-fast: 0.15s ease-in-out;
+  --transition-normal: 0.3s ease-in-out;
+  --transition-slow: 0.5s ease-in-out;
+}
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-black-brand);
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-yellow-ego);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-yellow-hover);
+}
+
+/* Clases de utilidad personalizadas */
+@layer components {
+  /* Contenedores */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-narrow {
+    @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-black-brand bg-yellow-ego hover:bg-yellow-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-focus transition-all duration-300 transform hover:scale-105 active:scale-95;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 border-2 border-yellow-ego text-base font-medium rounded-lg text-yellow-ego bg-transparent hover:bg-yellow-ego hover:text-black-brand focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-focus transition-all duration-300;
+  }
+  
+  .btn-ghost {
+    @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium rounded-lg text-text-primary bg-transparent hover:bg-surface-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-focus transition-all duration-300;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-surface-dark border border-border-gray rounded-xl p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-yellow;
+  }
+  
+  .card-vehicle {
+    @apply bg-surface-dark border border-border-gray rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:shadow-yellow hover:scale-105;
+  }
+  
+  /* Formularios */
+  .form-input {
+    @apply block w-full px-4 py-3 border border-border-gray rounded-lg bg-surface-dark text-text-primary placeholder-text-secondary focus:ring-2 focus:ring-yellow-ego focus:border-yellow-ego transition-colors duration-300;
+  }
+  
+  .form-select {
+    @apply block w-full px-4 py-3 border border-border-gray rounded-lg bg-surface-dark text-text-primary focus:ring-2 focus:ring-yellow-ego focus:border-yellow-ego transition-colors duration-300 cursor-pointer;
+  }
+  
+  .form-label {
+    @apply block text-sm font-medium text-text-secondary mb-2;
+  }
+  
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+  }
+  
+  .badge-featured {
+    @apply bg-yellow-ego text-black-brand;
+  }
+  
+  .badge-available {
+    @apply bg-green-500 text-white;
+  }
+  
+  .badge-sold {
+    @apply bg-red-500 text-white;
+  }
+  
+  /* Gradientes */
+  .gradient-overlay {
+    background: linear-gradient(135deg, rgba(13, 14, 18, 0.9) 0%, rgba(17, 21, 26, 0.8) 100%);
+  }
+  
+  .gradient-hero {
+    background: linear-gradient(135deg, var(--color-black-brand) 0%, var(--color-surface-dark) 50%, var(--color-black-brand) 100%);
+  }
+  
+  /* Efectos de texto */
+  .text-gradient {
+    background: linear-gradient(135deg, var(--color-yellow-ego) 0%, var(--color-yellow-hover) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animaciones personalizadas */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  /* Estados de hover para enlaces */
+  .link-hover {
+    @apply text-text-secondary hover:text-yellow-ego transition-colors duration-300 relative;
+  }
+  
+  .link-hover::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-yellow-ego);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .link-hover:hover::after {
+    width: 100%;
+  }
+}
+
+/* Keyframes personalizados */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(255, 210, 10, 0.3);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(255, 210, 10, 0.6);
+  }
+}
+
+/* Utilidades de loading */
+.loading-spinner {
+  border: 3px solid var(--color-border);
+  border-radius: 50%;
+  border-top: 3px solid var(--color-yellow-ego);
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Estilos para focus accessibility */
+.focus-visible:focus-visible {
+  outline: 2px solid var(--color-yellow-ego);
+  outline-offset: 2px;
+}
+
+/* Media queries para responsive */
+@media (max-width: 640px) {
+  :root {
+    --container-padding: 0.75rem;
+    --section-padding: 2rem 0;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Utilidades de animación scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}

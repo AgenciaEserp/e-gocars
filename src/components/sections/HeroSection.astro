@@ -1,0 +1,227 @@
+---
+// Hero section with vehicle showcase
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1920&q=80" 
+      alt="Vehículo premium E-Go Cars"
+      class="w-full h-full object-cover object-center opacity-40"
+      loading="eager"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black-brand/90 via-black-brand/60 to-transparent"></div>
+  </div>
+  
+  <!-- Navigation arrows -->
+  <button 
+    id="hero-prev" 
+    class="absolute left-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-surface-dark/80 backdrop-blur-sm rounded-full flex items-center justify-center text-yellow-ego hover:bg-yellow-ego hover:text-black-brand transition-all duration-300 group"
+    aria-label="Vehículo anterior"
+  >
+    <svg class="w-6 h-6 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+  </button>
+  
+  <button 
+    id="hero-next" 
+    class="absolute right-4 top-1/2 transform -translate-y-1/2 z-20 w-12 h-12 bg-surface-dark/80 backdrop-blur-sm rounded-full flex items-center justify-center text-yellow-ego hover:bg-yellow-ego hover:text-black-brand transition-all duration-300 group"
+    aria-label="Siguiente vehículo"
+  >
+    <svg class="w-6 h-6 transform group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+    </svg>
+  </button>
+  
+  <!-- Premium Badge -->
+  <div class="absolute top-8 left-8 z-20 hidden lg:block">
+    <div class="bg-yellow-ego text-black-brand px-4 py-2 rounded-full text-sm font-semibold flex items-center space-x-2 animate-pulse-slow">
+      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </svg>
+      <span>Vehículos Premium</span>
+    </div>
+  </div>
+  
+  <!-- Main Content -->
+  <div class="relative z-10 container-custom text-center lg:text-left">
+    <div class="max-w-4xl">
+      <!-- Main Heading -->
+      <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 animate-slide-up">
+        Tu próximo <span class="text-gradient">auto te está</span>
+        <br>
+        <span class="text-white">esperando</span>
+      </h1>
+      
+      <!-- Subtitle -->
+      <p class="text-lg md:text-xl lg:text-2xl text-text-secondary mb-8 max-w-2xl animate-slide-up animation-delay-200">
+        Descubre nuestra selección de vehículos de alta calidad con 
+        <span class="text-yellow-ego font-semibold">financiamiento flexible</span> y 
+        <span class="text-yellow-ego font-semibold">garantía extendida</span>
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center lg:justify-start mb-12 animate-slide-up animation-delay-400">
+        <a href="/catalogo" class="btn-primary text-lg px-8 py-4 group">
+          <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          Explorar Catálogo
+        </a>
+        
+        <a href="#servicios" class="btn-secondary text-lg px-8 py-4 group">
+          <svg class="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+          Cotizar Ahora
+        </a>
+      </div>
+      
+      <!-- Stats -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 animate-slide-up animation-delay-600">
+        <div class="text-center lg:text-left">
+          <div class="text-2xl lg:text-3xl font-bold text-yellow-ego">15+</div>
+          <div class="text-sm text-text-secondary">Años de Experiencia</div>
+        </div>
+        <div class="text-center lg:text-left">
+          <div class="text-2xl lg:text-3xl font-bold text-yellow-ego">500+</div>
+          <div class="text-sm text-text-secondary">Vehículos Vendidos</div>
+        </div>
+        <div class="text-center lg:text-left">
+          <div class="text-2xl lg:text-3xl font-bold text-yellow-ego">0%</div>
+          <div class="text-sm text-text-secondary">Tasa de Interés</div>
+        </div>
+        <div class="text-center lg:text-left">
+          <div class="text-2xl lg:text-3xl font-bold text-yellow-ego">3</div>
+          <div class="text-sm text-text-secondary">Años de Garantía</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce-slow">
+    <div class="flex flex-col items-center space-y-2">
+      <span class="text-xs text-text-secondary font-medium">Desliza para ver más</span>
+      <div class="w-6 h-10 border-2 border-yellow-ego rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-yellow-ego rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Hero carousel functionality
+    const heroImages = [
+      'https://images.unsplash.com/photo-1502877338535-766e1452684a?w=1920&q=80',
+      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920&q=80',
+      'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1920&q=80'
+    ];
+    
+    let currentSlide = 0;
+    const heroImg = document.querySelector('section img');
+    const prevBtn = document.getElementById('hero-prev');
+    const nextBtn = document.getElementById('hero-next');
+    
+    function updateHeroImage(index) {
+      if (heroImg && heroImages[index]) {
+        heroImg.src = heroImages[index];
+        heroImg.classList.add('opacity-0');
+        
+        setTimeout(() => {
+          heroImg.classList.remove('opacity-0');
+        }, 150);
+      }
+    }
+    
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % heroImages.length;
+      updateHeroImage(currentSlide);
+    }
+    
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + heroImages.length) % heroImages.length;
+      updateHeroImage(currentSlide);
+    }
+    
+    // Event listeners
+    nextBtn?.addEventListener('click', nextSlide);
+    prevBtn?.addEventListener('click', prevSlide);
+    
+    // Auto-slide functionality
+    let autoSlideInterval = setInterval(nextSlide, 5000);
+    
+    // Pause auto-slide on hover
+    const heroSection = document.querySelector('section');
+    heroSection?.addEventListener('mouseenter', () => {
+      clearInterval(autoSlideInterval);
+    });
+    
+    heroSection?.addEventListener('mouseleave', () => {
+      autoSlideInterval = setInterval(nextSlide, 5000);
+    });
+    
+    // Smooth scroll for CTA button
+    document.querySelector('a[href="#servicios"]')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById('servicios');
+      if (target) {
+        target.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Animation delays */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+    animation-fill-mode: both;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+    animation-fill-mode: both;
+  }
+  
+  /* Slide up animation */
+  .animate-slide-up {
+    opacity: 0;
+    transform: translateY(2rem);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-up.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Image transition */
+  section img {
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .animate-slide-up {
+      transform: translateY(1rem);
+    }
+    
+    .animation-delay-200,
+    .animation-delay-400,
+    .animation-delay-600 {
+      animation-delay: 0s;
+    }
+  }
+</style>

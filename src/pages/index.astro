@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import HeroSection from '@/components/sections/HeroSection.astro';
+import ServiceSelector from '@/components/sections/ServiceSelector.astro';
+import FeaturedVehicles from '@/components/sections/FeaturedVehicles.astro';
+import WhyChooseUs from '@/components/sections/WhyChooseUs.astro';
+---
+
+<BaseLayout 
+  title="E-Go Cars - Tu Concesionario de Confianza"
+  description="Descubre nuestra selección de vehículos premium con más de 15 años de experiencia. Financiamiento flexible, garantía extendida y servicio técnico especializado."
+>
+  <!-- Hero Section -->
+  <HeroSection />
+  
+  <!-- Service Selector -->
+  <ServiceSelector />
+  
+  <!-- Featured Vehicles -->
+  <FeaturedVehicles />
+  
+  <!-- Why Choose Us -->
+  <WhyChooseUs />
+</BaseLayout>
